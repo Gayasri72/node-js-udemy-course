@@ -1,7 +1,9 @@
 // reading data and writing data using fs module
-const fs= require('fs');
+// const fs= require('fs');
+import fs from 'fs';
 // include http module
-const http=require('http');
+// const http=require('http');
+import http from 'http';
 
 const hello ='Hello world!';
 console.log(hello);
