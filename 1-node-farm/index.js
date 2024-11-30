@@ -8,6 +8,7 @@ const http = require("http");
 const url = require("url");
 //our module to replace the template
 const replaceTemplate=require("./modules/replaceTemplate");
+const slugify = require("slugify");
 // import http from 'http';
 
 // const hello = "Hello world!";
@@ -64,7 +65,8 @@ const data=fs.readFileSync(`${__dirname}/dev-data/data.json`, "utf-8", )
     
 
 const dataObj = JSON.parse(data);
- 
+ const slugs=dataObj.map(el=>slugify(el.productName,{lower:true}))
+
 //creating server
 
 const server = http.createServer((req, res) => {
